@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Responsive Types</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <style>
+      /* main codes */
+      :root {
+        --fsMin: 16;
+        --fsMax: 26;
+        --vwMin: 420;
+        --vwMax: 1280;
+      }
+      html {
+        font-size: calc(
+          (var(--fsMin) * 1px) + (var(--fsMax) - var(--fsMin)) *
+            (100vw - (var(--vwMin) * 1px)) / (var(--vwMax) - var(--vwMin))
+        );
+      }
+      @media screen and (max-width: 420px) {
+        html {
+          font-size: calc(var(--fsMin) * 1px);
+        }
+      }
+      @media screen and (min-width: 1280px) {
+        html {
+          font-size: calc(var(--fsMax) * 1px);
+        }
+      }
+      /* // =========================================================== */
+      body {
+        padding: 2.5rem;
+        background-color: #111;
+        color: white;
+      }
+      a {
+        color: white;
+      }
+      #english {
+        direction: ltr;
+        text-align: justify;
+        font-family: "Segoe UI";
+      }
+      @font-face {
+        font-family: "iransans";
+        src: url("./iransans.ttf");
+      }
+      #persian {
+        direction: rtl;
+        text-align: justify;
+        font-family: "iransans";
+      }
+    </style>
+  </head>
+
+  <body>
+    <section id="english">
+      <h1>Responsive h1</h1>
+      <h2>Responsive h2</h2>
+      <h3>Responsive h3</h3>
+      <h4>Responsive h4</h4>
+      <h5>Responsive h5</h5>
+      <h6>Responsive h6</h6>
+      <p>
+        Responsive p : Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+        Accusamus aliquid nostrum eaque nisi tempora id iusto velit alias
+        doloremque.
+      </p>
+      <span>Responsive span</span>
+      <br />
+      <br />
+      <a href="#">Responsive a</a>
+      <br />
+      <br />
+      <i>Responsive i</i>
+      <br />
+      <br />
+      <div>Responsive Text in div</div>
+    </section>
+    <hr />
+    <section id="persian">
+      <h1>ریسپانسیو h1</h1>
+      <h2>ریسپانسیو h2</h2>
+      <h3>ریسپانسیو h3</h3>
+      <h4>ریسپانسیو h4</h4>
+      <h5>ریسپانسیو h5</h5>
+      <h6>ریسپانسیو h6</h6>
+      <p>
+        ریسپانسیو p : لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ
+        و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در
+        ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز
+      </p>
+      <span>ریسپانسیو span</span>
+      <br />
+      <br />
+      <a href="#">ریسپانسیو a</a>
+      <br />
+      <br />
+      <i>ریسپانسیو i</i>
+      <br />
+      <br />
+      <div>ریسپانسیو Text in div</div>
+    </section>
+  </body>
+</html>
